@@ -83,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
         Log.i("bombNumber", lastNumberClick);
         Log.i("bombBody", body);
 
+        if (lastNumberClick.equals("-1")) {
+            Log.i("lastNumberClick", "-1");
+
+            return;
+        }
+
         if (checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
             for(int i = 0; i < n; i++) {
 
