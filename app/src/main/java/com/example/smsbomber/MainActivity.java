@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (lastNumberClick.equals("-1")) {
             Log.i("lastNumberClick", "-1");
-
             return;
         }
 
@@ -168,7 +167,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if (Integer.parseInt(cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0)
                 {
-                    // Query phone here. Covered next
                     Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,ContactsContract.CommonDataKinds.Phone.CONTACT_ID +" = "+ id,null, null);
                     while (phones.moveToNext()) {
                         phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
